@@ -1,0 +1,45 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+               checkout changelog: false, poll: false, scm: scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'Token', url: 'https://pscode.lioncloud.net/eca-nehsharm22/aws-eks-setup']])
+            }
+        }
+        stage('Terraform init') {
+            steps {
+                sh 'terraform init'
+            }
+        }
+        stage('Terraform format') {
+            steps {
+                sh 'terraform fmt'
+            }
+        }
+        stage('Terraform validate') {
+            steps {
+                sh 'terraform validate'
+            }
+        }
+        stage('Terraform plan') {
+            steps {
+                sh 'terraform plan'
+            }
+        }
+        stage('Terraform action') {
+            input {
+                message 'Please select terraform action'
+                id 'actionId'
+                ok 'Submit'
+                submitterParameter 'approverId'
+                parameters {
+                    choice choices: ['apply', 'destroy'], name: 'action'
+                }
+            }
+            steps {
+                sh 'terraform ${action} --auto-approve'
+            }
+        }
+    }
+}

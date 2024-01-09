@@ -1,0 +1,12 @@
+.terraform.lock.hcl
+.terraform/terraform.tfstate
+.terraform/providers/registry.terraform.io/gavinbunney/kubectl/1.14.0/windows_386/LICENSE
+.terraform/providers/registry.terraform.io/gavinbunney/kubectl/1.14.0/windows_386/README.md
+.terraform/providers/registry.terraform.io/gavinbunney/kubectl/1.14.0/windows_386/terraform-provider-kubectl_v1.14.0.exe
+.terraform/providers/registry.terraform.io/hashicorp/aws/5.17.0/windows_386/terraform-provider-aws_v5.17.0_x5.exe
+.terraform/providers/registry.terraform.io/hashicorp/helm/2.5.1/windows_386/terraform-provider-helm_v2.5.1_x5.exe
+.terraform/providers/registry.terraform.io/hashicorp/http/3.4.0/windows_386/terraform-provider-http_v3.4.0_x5.exe
+.terraform/providers/registry.terraform.io/hashicorp/kubernetes/2.23.0/windows_386/terraform-provider-kubernetes_v2.23.0_x5.exe
+.terraform/providers/registry.terraform.io/hashicorp/null/3.2.1/windows_386/terraform-provider-null_v3.2.1_x5.exe
+.terraform/providers/registry.terraform.io/hashicorp/template/2.2.0/windows_386/terraform-provider-template_v2.2.0_x4.exe
+.terraform/providers/registry.terraform.io/hashicorp/tls/4.0.4/windows_386/terraform-provider-tls_v4.0.4_x5.exe
