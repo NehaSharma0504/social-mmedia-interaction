@@ -1,0 +1,7 @@
+rootProject.name = 'myProgram'
+include 'UserData'
+include 'SocialMediaInteraction'
+include 'EurekaServer'
+include 'ApiGateway'
+include 'identity-service'
+

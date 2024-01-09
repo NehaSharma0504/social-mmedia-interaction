@@ -1,0 +1,16 @@
+type Notification {
+    id: ID!
+    type: String!
+    message: String!
+    # Other fields as needed
+}
+
+type User {
+    id: ID!
+    username: String!
+    # Other fields as needed
+}
+
+type Query {
+    getUserNotifications(userId: ID!): [Notification]
+}

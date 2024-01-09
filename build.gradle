@@ -1,0 +1,67 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.7.7'
+	id 'io.spring.dependency-management' version '1.1.0'
+}
+
+group = 'eca.learnings'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '17'
+	targetCompatibility = '17'
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+ext {
+	set('springCloudVersion', "2021.0.3")
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-graphql'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
+	implementation 'org.springframework.kafka:spring-kafka'
+	implementation 'org.twitter4j:twitter4j-core:4.0.7'
+	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+	implementation('io.jsonwebtoken:jjwt:0.2')
+	implementation 'org.aspectj:aspectjrt:1.9.7'
+	implementation 'org.aspectj:aspectjweaver:1.9.7'
+	implementation 'javax.validation:validation-api:2.0.1.Final'
+	implementation 'com.graphql-java:graphql-java:17.5'
+	implementation 'com.graphql-java-kickstart:graphql-spring-boot-starter:11.1.0'
+	compileOnly 'org.projectlombok:lombok'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework:spring-webflux'
+	testImplementation 'org.springframework.graphql:spring-graphql-test'
+	testImplementation 'org.springframework.kafka:spring-kafka-test'
+}
+
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:2021.0.3"
+	}
+}
+bootJar {
+	enabled = false
+}
+
+jar {
+	enabled = true
+}
+tasks.named('test') {
+	useJUnitPlatform()
+}

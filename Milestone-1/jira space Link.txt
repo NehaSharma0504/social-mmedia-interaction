@@ -1,0 +1,2 @@
+https://tools.publicis.sapient.com/jira/browse/EQB-81 //has subtasks as well
+https://tools.publicis.sapient.com/jira/browse/EQB-92
